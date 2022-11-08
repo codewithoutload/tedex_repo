@@ -95,146 +95,124 @@ h1{
 
 /* Navbar */
 
-*{
-    box-sizing:border-box;
-
-}
-html{
-    font-family: sans-serif;
-}
-
-.tedx-root{
-    height: 200px;
-    background: url('https://res.cloudinary.com/dtkm20qt9/image/upload/v1667646362/pattern_t0rdha.webp')  repeat;
-}
-
-.tedx-navbar{
-    width: 100%;
+#primary
+{
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 50px;
-    background:rgba(0,0,0,0.7);
+    position: sticky;
+    top:0px;
+    background-color: black; 
+    margin: -20px -10px;
+    opacity: 0.85;
+    transition:"padding-top" 0.5s ;
+    padding-top: auto;
+    padding-bottom: auto;
+    z-index: 1;
+}
+
+#logo
+{
+    display: inline;
+    margin: auto;
+    width: 260px;
+}
+
+
+#list
+{
+    display: inline-flex;
     color: white;
-    transition: all 0.5s;
+    margin:auto;
+    
 }
 
-.tedx-navbar .tedx-brand-logo > img{
-    width: 300px;
-    height: auto;
-}
-
-.tedx-navbar #navbar-right{
-    list-style: none;
-}
-
-.tedx-navbar #navbar-wrapper .close-icon-wrapper{
-    width: 100%;
-    padding: 20px;
-}
-
-.tedx-navbar #navbar-wrapper .close-icon{
-    display: none;
-    width: 22px;
-    height:auto;
-}
-
-.tedx-navbar{
-    position: fixed;
-    top: 0;
-    left: 0;
-    right:0;
-    overflow: visible;
-}
-
-.navbar-right-container{
-    position:relative;
-    overflow:visible;
-}
-
-
-
-.tedx-navbar #navbar-wrapper.visible .close-icon{
-    display: block;
-    float: right;
-
-
-}
-
-.tedx-navbar #navbar-right li{
-    display: inline-block;
-    margin-left: 20px;
-    text-transform: uppercase;
-}
-
-.tedx-navbar #navbar-right li >a {
-    text-decoration: inherit;
-    color: inherit;
-    cursor: auto;
-    transition: color 0.5s;
-}
-
-.tedx-navbar #navbar-right li >a:hover{
+.tabs
+{
+    background-color: black;
+    color: white;
+    margin: 15px 18px;
+    font-family: 'Poppins', sans-serif;
     cursor: pointer;
+    transition: color 0.25s ease-in-out;
+    text-decoration: none;
+}
+
+.tabs:hover
+{
     color: red;
 }
 
-.navbar-icon{
+#toggleMenu
+{
+    margin:auto 20px;
+    width: 40px;
+    display: none;
+    cursor: pointer;
+}
+
+
+#leftContainer
+{
+    position: fixed;
+    float: left;
+    top:0px;
+    left: -2px;
+    height: 100vh;
+    background:linear-gradient(219deg, #ff0000, #000000), red;
+    width: 260px;
+    z-index: 1;
+    opacity: 1;
+    transition:all 1s ease-in-out;
+}
+
+
+#leftNav
+{
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+}
+
+.leftTabs
+{
+    text-decoration: none;
+    padding: 20px 20px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    border-bottom:0.5px solid white;
+    transition: color 0.25s ease-in-out;
+}
+
+.leftTabs:hover
+{
+    color: red;
+}
+
+.close
+{
     display: none;
 }
 
-.tedx-navbar.shrink-navbar{
-    background: rgba(0,0,0,1);
-    padding-top: 0;
-    padding-bottom:0;
+#closeMenu
+{
+    margin:auto 200px;
+    margin-bottom: 50px;
+    cursor: pointer;
 }
 
-@media screen and (max-width: 2000px){
 
-
-    #navbar-wrapper{
-        position:absolute;
-        top:0;
-        bottom:0;
-        left:-500px;
-        width: 260px;
-        background:linear-gradient(217deg, #ff0000, #000000), red;
-        transition: left 1s;
-        display: flex;
-        flex-direction: column;
-        height: 100vh;
+@media only screen and (max-width:1020px) {
+    .tabs
+    {
+        display: none;
     }
 
-    #navbar-right{
-        display:flex;
-        flex-direction:column;
-        margin-left: 0 !important;
-        width: 100%;
-        margin-block-start: 0;
-        padding-inline-start: 0;
-        margin-top:  40px;
-        z-index: 1000;
-    }
-
-
-
-    #navbar-right > li{
+    #toggleMenu
+    {
         display: block;
-        padding:15px;
-        margin-left: 0 !important;
-        border-bottom: 1px solid rgba(255,255,255,0.5);
-        width: 100%;
-        font-size: 0.8rem;
-        font-weight: 500;
-    }
-
-    #navbar-wrapper.visible{
-        left: 0px;
-    }
-    .navbar-icon{
-        display: inline-block;
     }
 }
+
+
 
 
 
@@ -589,3 +567,271 @@ template {
 [hidden] {
     display: none;
 }
+
+/* css for footer starts here */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100&display=swap');
+
+
+body{
+    background-color: black;
+    color: white;
+    font-family: 'Inter', sans-serif;
+}
+
+.footer_mainbox{
+    margin: 2% 3% 2% 3%;
+}
+
+@media screen and (min-width:1100px){
+    .footer_box{
+        display: flex;
+        flex-direction: row;
+        /* justify-content: space-around; */
+        flex-wrap: wrap;
+        margin: 1% 0 2% 0;
+    }
+    
+    hr{
+        background-color: rgba(217, 217, 217, 1);
+        
+    }
+
+    .tedex_logo{
+        margin-left: 0;
+    }
+
+    #ted_image{
+        width: 380px;
+    }
+
+    .headings_top{
+    
+        font-size:25px;
+        margin: 5px 5px 5px 5px;
+        
+    }
+    
+    .headings_bottom{
+        /* font-size: 1.2vw; */
+        font-size: 25px;
+        margin: 5px auto 5px 0;
+    
+    }
+    
+    .links{
+        /* font-size: 1vw; */
+        font-size: 18px;
+        color:  rgba(153, 153, 153, 1);
+        margin:7px 5px 8px 5px;
+        /* padding: 10% 10% 10% 10%; */
+        
+    }
+
+    .links3{
+        margin: 6px 5px 7px 5px;
+        font-size: 18px;
+        color:  rgba(153, 153, 153, 1);
+    }
+
+    
+    
+    .footer_foot{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .foot_text{
+        color:rgba(153, 153, 153, 1) ;
+        /* font-size: 1vw; */
+        font-size: 18px;
+    }
+    
+    .footer_sub_boxes{
+        padding: 0 0 0 0;
+        margin-right: auto;
+        white-space: nowrap;
+    }
+}
+
+@media (max-width:1100px) and (min-width:800px) {
+    .footer_box{
+        display: flex;
+        flex-direction: row;
+        /* justify-content: space-around; */
+        flex-wrap: wrap;
+        margin: 1% 0 2% 0;
+    }
+    
+    hr{
+        background-color: rgba(217, 217, 217, 1);
+        
+    }
+
+    .tedex_logo{
+        margin-left: 0;
+    }
+
+    #ted_image{
+        width: 320px;
+    }
+
+    .headings_top{
+        /* font-size: 100%; */
+        /* font-size: 1.2vw; */
+        font-size: 25px;
+        margin:5px 5px 5px 5px;
+    }
+    
+    .headings_bottom{
+        /* font-size: 1.2vw; */
+        font-size: 25px;
+        margin: 5px auto 5px 0;
+    
+    }
+    
+    .links{
+        /* font-size: 1vw; */
+        font-size: 18px;
+        color:  rgba(153, 153, 153, 1);
+        margin: 7px 5px 8px 5px;
+        
+    }
+    
+    .links3{
+        margin: 6px 5px 7px 5px;
+        font-size: 18px;
+        color:  rgba(153, 153, 153, 1);
+    }
+
+    .footer_foot{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .foot_text{
+        color:rgba(153, 153, 153, 1) ;
+        /* font-size: 1vw; */
+        font-size: 18px;
+    }
+    
+    .footer_sub_boxes{
+        padding: 0 100px 0 0;
+        margin-right: auto;
+        white-space: nowrap;
+    }
+
+    #sub_box2{
+    
+        /* padding-left: 10vw; */
+        /* padding-right: 20vw; */
+    }
+
+    
+
+    #sub_box3{
+        padding-right: 125px;
+
+    }
+    #sub_box4{
+        /* padding-left: 26vw; */
+    }
+
+
+    #sub_box4{
+        /* padding-left: 32%; */
+        /* padding-left: auto; */
+    }
+
+
+
+}
+
+@media screen and (max-width:800px){
+    .footer_box{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;        
+        margin: 1% 0 2% 0;
+    }
+    
+    #ted_image{
+        width: 40vw;
+    }
+    
+    hr{
+        background-color: rgba(217, 217, 217, 1);
+        
+    }
+
+    .headings_top{
+        /* font-size: 100%; */
+        /* font-size: 1.2vw; */
+        font-size: 3.5vw;
+        /* margin: 10% 10% 10% 10%; */
+        padding: 2vw 2vw 0vw 2vw;
+        text-align: center;
+    }
+    
+    .headings_bottom{
+        /* font-size: 1.2vw; */
+        font-size: 3.5vw;
+        margin: 0 auto 0 0;
+        text-align: center;
+        padding: 1vw 1vw 1vw 1vw;
+    
+    }
+    
+
+
+    .links{
+        /* font-size: 1vw; */
+        font-size: 2.5vw;
+        color:  rgba(153, 153, 153, 1);
+        /* margin: 10% 10% 10% 10%; */
+        padding: 1.1vw 1.1vw 0.5vw 1.1vw;
+        text-align: center;
+        
+    }
+    
+    .links3{
+        padding: 1vw 1vw 0.5vw 1vw;
+        font-size: 2.5vw;
+        color:  rgba(153, 153, 153, 1);
+        text-align: center;
+    }
+    /* #sub_box2{
+        padding: 8% 8% 8% 8%;
+    } */
+
+    #follow_us{
+        margin-top: 0.90vw;
+    }
+       
+    
+    .footer_foot{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+    }
+    
+    .foot_text{
+        color:rgba(153, 153, 153, 1) ;
+        /* font-size: 1vw; */
+        font-size: 2.5vw;
+        margin: 2vw 1vw 2vw 1vw;
+        text-align: center;
+    }
+    
+    .footer_sub_boxes{
+        padding: 0 0% 0 0%;
+        margin-right: auto;
+        margin-left: auto;
+        white-space: nowrap;
+        overflow: visible;
+    }
+}
+/* css for footer ends here */

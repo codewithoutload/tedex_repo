@@ -14,31 +14,27 @@
   <body>
 
 
-    <section style="z-index: 10;position: relative;">
-      <div class="tedx-root">
-        <nav class="tedx-navbar">
-            <div class="tedx-brand-logo"><img src="https://res.cloudinary.com/dtkm20qt9/image/upload/v1667646362/ted_white_ibgtmf.png" alt=""></div>
-            <div id="navbar-wrapper">
-                <a href="javascript:void(0)" onclick="toggleMenu()" class="close-icon-wrapper">
-                    <img src="https://res.cloudinary.com/dtkm20qt9/image/upload/v1667646362/icon-close_rv2rq7.png" alt="" class="close-icon">
-                </a>
-                 <ul id="navbar-right">
-                      <li><a href="../Home.html">Home</a></li>
-                      <li><a href="../Talks/talks.html">Talks</a></li>
-                      <li><a href="../Talks_Studio/talk_studio.html">Blogs</a></li>
-                      <li><a href="../About_Us/AboutUs.html">About us</a></li>
-                      <li><a href="../Contact_Us/ContactUs.html">Contact us</a></li>
-  
-                  </ul>
-              </div>
-    
-                </div>
-            <a href="javascript:void(0)" onclick="toggleMenu()" class="navbar-icon">
-                <img src="https://res.cloudinary.com/dtkm20qt9/image/upload/v1667646362/icon-menu_sfffe0.svg" alt="" class="icon">
-            </a>
-        </nav>
-    </div>
-    </section>
+    <nav id="primary">
+      <img id="logo" src="./Images/TEDx logo.png" alt="TEDx logo">
+      <div id="list">
+          <a href=# class="tabs">HOME</a>
+          <a href=# class="tabs">TALKS</a>
+          <a href=# class="tabs">BLOGS</a>
+          <a href=# class="tabs">ABOUT US</a>
+          <a href=# class="tabs">CONTACT US</a>
+          <img src="./Images/toggleMenuIcon-white.jpg" alt="MENU" width="50px" id="toggleMenu">
+      </div>
+  </nav>
+  <div id="leftContainer" class="close">
+      <nav id="leftNav">
+          <img src="./Images/b_cross.svg" width="20px" id="closeMenu">
+          <a href=# class="leftTabs">HOME</a>
+          <a href=# class="leftTabs">TALKS</a>
+          <a href=# class="leftTabs">BLOGS</a>
+          <a href=# class="leftTabs">ABOUT US</a>
+          <a href=# class="leftTabs">CONTACT US</a>
+      </nav>
+  </div>
 
 
     <section>
@@ -97,6 +93,54 @@
       </div>
   </section>
 
+  <!-- footer code starts here -->
+  <div class="footer_mainbox">
+    <div><hr></div>
+    
+    <div class="footer_box">
+        <div  class="tedex_logo footer_sub_boxes" id="sub_box1"><img src="ted.png" alt="ted_image" id="ted_image" ></div>
+  
+  
+        <div class="footer_sub_boxes" id="sub_box2">
+            <div class="headings_top"> <b>TEDxIITGuwahati </b> </div>
+            <div class="links">Home</div>
+            <div class="links">Talks</div>
+            <div class="links">About Us</div>
+            <div class="links">Contact Us</div>
+        </div>
+  
+  
+  
+        <div class="footer_sub_boxes" id="sub_box3">
+            <div class="headings_top"> <b> Events</b></div>
+            <div class="links">TEDxIITGuwahati</div>
+            <div class="links"> TEDxIITGuwahati Studio</div>
+        </div>
+  
+  
+        <div class="footer_sub_boxes" id="sub_box4">
+            <div class="headings_top" id="follow_us"> <b> Follow Us</b></div>
+            <div class=" links3">Facebook</div>
+            <div class=" links3">Instagram</div>
+            <div class=" links3">LinkedIn</div>
+            <div class=" links3">Twitter</div>
+            <div class=" links3">Medium</div>
+        </div>
+    </div>
+    <div><hr ></div>
+    
+  
+    <div>
+        <div class="headings_bottom"> <b> Ideas Worth Spreading  </b></div>
+        <div class="footer_foot">
+        <div class="foot_text" id="license_text">This independent TEDx is operated under license from TED.</div>
+        <div class="foot_text" id="copyright_text">© 2019-2022 TEDxIITGuwahati. All rights reserved</div>
+    </div>
+    </div>
+  
+  
+  </div>
+  <!-- footer code ends here -->
   
 
 
@@ -120,33 +164,18 @@
     </script>
 
     <script>
-      function toggleMenu(){
+      const toggleMenu = document.getElementById('toggleMenu');
+      toggleMenu.addEventListener('click', changeMenu);
 
-          const navbar = document.getElementById('navbar-wrapper');
-          navbar.classList.toggle("visible");
+      const clossMenu = document.getElementById('closeMenu');
+      clossMenu.addEventListener('click', changeMenu);
+
+
+      function changeMenu()
+      {
+          const leftMenu = document.getElementById('leftContainer');
+          leftMenu.classList.toggle('close');
       }
-
-      // Debounce wrapper would be more optimized
-      // but since this a POC of the navbar, this
-      // should suffice
-      function createOnScroll(){
-          let isAtTop = true;
-
-          return function(e){
-              const positionFromTop = document.documentElement.scrollTop
-              const navbar = document.getElementsByClassName('tedx-navbar')[0]
-              if(positionFromTop > 0 && isAtTop){
-                  isAtTop = !isAtTop;
-                  navbar.classList.add('shrink-navbar')
-              }else if(positionFromTop == 0 && !isAtTop){
-                  isAtTop = !isAtTop;
-                  navbar.classList.remove('shrink-navbar');
-              }
-
-          }
-      }
-
-      window.onscroll = createOnScroll()
 
     </script>
 
